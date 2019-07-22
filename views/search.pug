@@ -1,0 +1,34 @@
+extends layout/profile.pug
+block variables
+    -const nameProfile="Sarah Freeman"
+    -const title="Search/Results"
+block content
+    section.wraper.combine
+        .cover
+            form.search(action="##")
+                span location
+                    include ./parts/country.pug
+                span category
+                    select
+                        option(value="") Category
+                span subcategory
+                    select
+                        option(value="") Subcategory
+                span service
+                    select
+                        option(value="") 3 services
+                span period
+                    select
+                        option(value="") 11/01/19 - 14/01/19
+                .search__button
+                button(type="submit") search
+            .results
+                .category
+                    p.category__text show map
+                    .category__button
+                        input#price(type="radio", name="category" value="by price")
+                        label(for="price") by price
+                        input#rating(type="radio", name="category" value="by rating")
+                        label(for="rating") by rating
+                .workers
+                    include mixins/worker.pug

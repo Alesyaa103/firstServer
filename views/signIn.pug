@@ -1,0 +1,18 @@
+extends layout/base.pug
+block variables
+    -const linkInHeader="/signUp1.html"
+    -const linkDescription="Sign up"
+    -const question="Do not have an account?"
+    -const title="Sign In"
+block content
+    section.content
+        .container
+            form.send(action="###" method="POST")
+                legend.send__name Sing In
+                input(placeholder="E-mail" type="email")
+                input(type="password" placeholder="Password")
+                a.send__link(href="###") Forgot password?
+                div.send__button
+                    button(type="submit") Sign in
+
+

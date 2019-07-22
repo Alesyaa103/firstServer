@@ -1,0 +1,101 @@
+- 
+    const arrayUser = [
+        {
+            avatar: "./img/person1.svg",
+            name: "Miranda Hops",
+            isOnline: true,
+            isMute: true,
+            msg: "Excepteur sint occaecata Lorem, ipsum."
+        },
+        {
+            avatar: "./img/person2.svg",
+            name: "Barry Callebaut",
+            isOnline: true,
+            isMute: false,
+            msg: "Excepteur sint occaecata Lorem, ipsum."
+        },
+        {
+            avatar: "./img/person3.svg",
+            name: "Stacey Dosh",
+            isOnline: true,
+            isMute: false,
+            msg: "Excepteur sint occaecata Lorem, ipsum."
+        },
+        {
+            avatar: "./img/person5.svg",
+            name: "Michael Kors",
+            isOnline: false,
+            isMute: false,
+            msg: "Excepteur sint occaecata Lorem, ipsum."
+        },
+        {
+            avatar: "./img/person6.svg",
+            name: "Johny Cash",
+            isOnline: true,
+            isMute: false,
+            msg: "Excepteur sint occaecata Lorem, ipsum."
+        },
+        {
+            avatar: "./img/person1.svg",
+            name: "Miranda Hops",
+            isOnline: false,
+            isMute: false,
+            msg: "Excepteur sint occaecata Lorem, ipsum."
+        },
+        {
+            avatar: "./img/person2.svg",
+            name: "Barry Callebaut",
+            isOnline: true,
+            isMute: true,
+            msg: "Excepteur sint occaecata Lorem, ipsum."
+        },
+        {
+            avatar: "./img/person3.svg",
+            name: "Stacey Dosh",
+            isOnline: true,
+            isMute: false,
+            msg: "Excepteur sint occaecata Lorem, ipsum."
+        },
+        {
+            avatar: "./img/person5.svg",
+            name: "Michael Kors",
+            isOnline: false,
+            isMute: false,
+            msg: "Excepteur sint occaecata Lorem, ipsum."
+        },
+        {
+            avatar: "./img/person6.svg",
+            name: "Johny Cash",
+            isOnline: true,
+            isMute: false,
+            msg: "Excepteur sint occaecata Lorem, ipsum."
+        },
+        {
+            avatar: "./img/person5.svg",
+            name: "Michael Kors",
+            isOnline: false,
+            isMute: false,
+            msg: "Excepteur sint occaecata Lorem, ipsum."
+        },
+        {
+            avatar: "./img/person6.svg",
+            name: "Johny Cash",
+            isOnline: true,
+            isMute: false,
+            msg: "Excepteur sint occaecata Lorem, ipsum."
+        }
+    ];
+
+mixin chat(user)
+    li.chat
+        img.chat__avatar(src= user.avatar, alt="")
+        .info
+            span.info__name= user.name
+                if (user.isOnline)
+                    img.img__online(src= "./img/online.svg", alt="")
+                if (user.isMute)
+                    img.img__mute(src= "./img/mute.svg", alt="")  
+            p.info__msg= user.msg
+
+for value in arrayUser
+    +chat(value)

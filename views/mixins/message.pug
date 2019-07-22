@@ -1,0 +1,33 @@
+-   
+    const arrayMsg = [
+        {
+            position: "left",
+            text: " Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima, cum culpa?",
+            time: "9:31"
+        },
+        {
+            position: "right",
+            text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima, cum culpa?",
+            time: "9:31"
+        }
+    ]
+
+mixin message(user)
+    if user.position === "left"
+        li.message
+            img.message__avatar(src="./img/av.svg", alt="")
+            .message__text
+                p.message__sended= user.text
+                p.message__time= user.time
+                img.img__left(src="./img/left.svg", alt="")
+    else
+        li.message__my
+            .message__text
+                p.message__sended= user.text
+                p.message__time= user.time
+                img.img__right(src="./img/right.svg", alt="")
+
+- for (let i=1; i<=12; i++){
+    for value in arrayMsg
+        +message(value)
+- }

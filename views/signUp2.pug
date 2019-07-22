@@ -1,0 +1,29 @@
+extends layout/base.pug
+block variables
+    -const linkInHeader="###"
+    -const linkDescription="Log in"
+    -const question="Already have an account?"
+    -const title="Sign up"
+block content
+    section.content
+        .container
+            form.send(action="###" method="POST")
+                legend.send__name--black Complete your account
+                input#password(placeholder="Create a password" type="password")
+                .progress.hidden
+                    .progress__line
+                    .progress__line
+                    .progress__line
+                input(placeholder="Confirm password" type="password")
+                .send__check
+                    input#check(type="checkbox")
+                    label(for="check") I agree to the myFixer.com
+                    a(href="###") Terms of Service
+                .send__check
+                    input#check1(type="checkbox")
+                    label(for="check1") I agree to the myFixer.com
+                    a(href="###") Privacy Policy
+                img(src="./img/recaptcha.svg", alt="")
+                .send__button
+                    button(type="submit") Done!
+    script(src="./js/main.js")

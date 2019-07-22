@@ -1,0 +1,132 @@
+-
+    const arrayWorker = [
+        {
+            avatar: "./img/person1.svg",
+            name:  "Richard Thompson",
+            location: "Vancouver, Canada",
+            stack: " Python, Django, Sketch",
+            price: " $ 1,200 USD",
+            star: "gold"
+        },
+        {
+            avatar: "./img/person1.svg",
+            name:  "Richard Thompson",
+            location: "Vancouver, Canada",
+            stack: " Python, Django, Sketch",
+            price: " $ 1,200 USD",
+            star: "bronze"
+        },
+        {
+            avatar: "./img/person1.svg",
+            name:  "Richard Thompson",
+            location: "Vancouver, Canada",
+            stack: " Python, Django, Sketch",
+            price: " $ 1,200 USD",
+            star: "silver"
+        },
+        {
+            avatar: "./img/person1.svg",
+            name:  "Richard Thompson",
+            location: "Vancouver, Canada",
+            stack: " Python, Django, Sketch",
+            price: " $ 1,200 USD",
+            star: "gold"
+        },
+        {
+            avatar: "./img/person1.svg",
+            name:  "Richard Thompson",
+            location: "Vancouver, Canada",
+            stack: " Python, Django, Sketch",
+            price: " $ 1,200 USD",
+            star: "gold"
+        },
+        {
+            avatar: "./img/person1.svg",
+            name:  "Richard Thompson",
+            location: "Vancouver, Canada",
+            stack: " Python, Django, Sketch",
+            price: " $ 1,200 USD",
+            star: "gold"
+        },
+        {
+            avatar: "./img/person1.svg",
+            name:  "Richard Thompson",
+            location: "Vancouver, Canada",
+            stack: " Python, Django, Sketch",
+            price: " $ 1,200 USD",
+            star: "silver"
+        },
+        {
+            avatar: "./img/person1.svg",
+            name:  "Richard Thompson",
+            location: "Vancouver, Canada",
+            stack: " Python, Django, Sketch",
+            price: " $ 1,200 USD",
+            star: "gold"
+        },
+        {
+            avatar: "./img/person1.svg",
+            name:  "Richard Thompson",
+            location: "Vancouver, Canada",
+            stack: " Python, Django, Sketch",
+            price: " $ 1,200 USD",
+            star: "gold"
+        },
+        {
+            avatar: "./img/person1.svg",
+            name:  "Richard Thompson",
+            location: "Vancouver, Canada",
+            stack: " Python, Django, Sketch",
+            price: " $ 1,200 USD",
+            star: "gold"
+        },
+        {
+            avatar: "./img/person1.svg",
+            name:  "Richard Thompson",
+            location: "Vancouver, Canada",
+            stack: " Python, Django, Sketch",
+            price: " $ 1,200 USD",
+            star: "gold"
+        },
+        {
+            avatar: "./img/person1.svg",
+            name:  "Richard Thompson",
+            location: "Vancouver, Canada",
+            stack: " Python, Django, Sketch",
+            price: " $ 1,200 USD",
+            star: "gold"
+        },
+        {
+            avatar: "./img/person1.svg",
+            name:  "Richard Thompson",
+            location: "Vancouver, Canada",
+            stack: " Python, Django, Sketch",
+            price: " $ 1,200 USD",
+            star: "gold"
+        }
+    ];
+-
+
+mixin workers(user)
+    article.worker
+        img.worker__avatar(src=user.avatar, alt="")
+        .info
+            span.info__name= user.name
+                if (user.star === "gold")
+                    img.img__star(src="./img/gold.svg")
+                if (user.star === "silver")
+                    img.img__star(src="./img/silver.svg")
+                if (user.star === "bronze")
+                    img.img__star(src="./img/bronze.svg")
+            .info__location
+                img(src="./img/geo.svg", alt="")
+                p= user.location
+            .info__stack
+                p.inf Stack:
+                p= user.stack
+            .info__price
+                p.inf Base Daily Rate:
+                p= user.price
+
+for value in arrayWorker
+    +workers(value)

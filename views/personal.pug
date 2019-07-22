@@ -1,0 +1,47 @@
+extends layout/profile.pug
+block variables
+    -const nameProfile="Faruh Bernandez"
+    -const title="Profile/Personal"
+block content
+    section.wraper
+        .information
+            button.information__button#personal PERSONAL INFORMATION
+            button.information__button.grey#account ACCOUNT INFORMATION
+        .content
+            .content__photo
+                img.content__image(src="./img/avatar.svg", alt="")
+                span.content__text Change photo
+                    img(src="./img/pencil.svg", alt="")
+            form(action="###")
+                fieldset
+                    span First name
+                        input(type="text" value="Faruh")
+                    span title
+                        select
+                            option(disabeld value="Mr") Mr
+                            option(value="Mrs") Mrs
+                    span country
+                        include ./parts/country.pug
+                fieldset        
+                    span Last name
+                        input(type="text" value="Bernandes")
+                    span mobile phone
+                        .mobile
+                            .mobile__country
+                                img(src="./img/flag.svg", alt="")
+                                img(src="./img/Shape.svg", alt="")
+                            input.mobile__number(type="tel" size="10" value="+65")
+                    span company
+                        input(type="text")
+        .account.hidden
+            form.account__form(action="###")
+                fieldset
+                    span username
+                        input(type="text" value="sarahbarnes")
+                fieldset
+                    span e-mail
+                        input(type="text" value="sarahbbb@gmail.com")
+            a.account__link(href="###") 
+                p Change password
+                img(src="./img/part.svg", alt="")
+    script(src="./js/button.js")
