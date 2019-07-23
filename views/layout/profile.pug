@@ -6,7 +6,7 @@ html(lang="en")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         meta(http-equiv="X-UA-Compatible", content="ie=edge")
         link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Roboto&display=swap")
-        link(rel="stylesheet", href="./css/main__profile.css")
+        link(rel="stylesheet", href="/css/main__profile.css")
         title= title
     body
         main.main
@@ -14,19 +14,19 @@ html(lang="en")
                 .logo
                 ul
                     li.sidebar__item
-                        a(href="search.html")
+                        a(href="/search")
                             if (title === "Search/Results")
                                 img(src="./img/searchW.svg", alt="")
                             if (title === "Profile/Personal")
                                 img(src="./img/search.svg", alt="")
                     li.sidebar__item
-                        a(href="personal.html")
+                        a(href="/personal")
                             if (title === "Search/Results")
                                 img(src="./img/myprofile.svg", alt="")
                             if (title === "Profile/Personal")
                                 img(src="./img/profileActiv.svg")
                     li.sidebar__item
-                        a(href="chat.html")
+                        a(href="/chat")
                             img(src="./img/envelope.svg", alt="")
                     li.sidebar__item
                         a(href="###")

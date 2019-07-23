@@ -3,13 +3,13 @@ const {getSignIn, getPassword1, getPassword2, getPassword3, getChat, getPersonal
 const router = new koaRouter();
 
 router.get("/", getList)
-router.get("/sign", getSignIn)
+router.get("signin", getSignIn)
 router.get("email", getPassword1)
 router.get("email/ready", getPassword2)
 router.get("email/ready/reset", getPassword3)
-router.get("sign", getSignUp1)
-router.get("sign/complete", getSignUp2)
-router.get("sign/complete/ready", getSignUp6)
+router.get("signup", getSignUp1)
+router.get("signup/complete", getSignUp2)
+router.get("signup/complete/ready", getSignUp6)
 router.get("personal", getPersonal)
 router.get("search", getSearch)
 router.get("chat", getChat)
