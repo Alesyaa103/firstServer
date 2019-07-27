@@ -7,14 +7,14 @@ block variables
 block content
     section.content
         .container
-            form.send(action="###" method="POST")
+            form.send(action="/reg-pass" method="POST")
                 legend.send__name--black Complete your account
-                input#password(placeholder="Create a password" type="password")
+                input#password(placeholder="Create a password" type="password" name="password1")
                 .progress.hidden
                     .progress__line
                     .progress__line
                     .progress__line
-                input(placeholder="Confirm password" type="password")
+                input(placeholder="Confirm password" type="password" name="password2")
                 .send__check
                     input#check(type="checkbox")
                     label(for="check") I agree to the myFixer.com

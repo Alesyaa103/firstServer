@@ -7,12 +7,12 @@ block variables
 block content
     section.content
         .container
-            form.send(action="###" method="POST")
+            form.send(action="/reg" method="POST")
                 legend.send__name Sign Up
                 .send__same
-                    input(placeholder="First name" type="text")
-                    input(placeholder="Last name" type="text")
-                input(placeholder="Username" type="text")
-                input(placeholder="E-mail" type="email")
+                    input(placeholder="First name" type="text" name="firstname")
+                    input(placeholder="Last name" type="text" name="lastname")
+                input(placeholder="Username" type="text" name="username")
+                input(placeholder="E-mail" type="email" name="email")
                 .send__button
                     button(type="submit") Get started

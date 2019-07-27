@@ -1,5 +1,5 @@
 const koaRouter = require("koa-router");
-const {getSignIn, getPassword1, getPassword2, getPassword3, getChat, getPersonal, getSearch, getSignUp1, getSignUp2, getSignUp6, getList} = require("../controllers");
+const {reg,  getSignIn, getPassword1, getPassword2, getPassword3, getChat, getPersonal, getSearch, getSignUp1, getSignUp2, getSignUp6, getList} = require("../controllers");
 const router = new koaRouter();
 
 router.get("/", getList)
@@ -14,6 +14,6 @@ router.get("personal", getPersonal)
 router.get("search", getSearch)
 router.get("chat", getChat)
 
-
+//router.post("reg", reg)
+//router.post("reg-pass", regpass)
 module.exports = router;
- 

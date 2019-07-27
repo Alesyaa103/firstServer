@@ -1,3 +1,4 @@
+const User=require("../models/User");
 module.exports = {
     async getList(ctx, next){
         await ctx.render("list")
@@ -31,5 +32,23 @@ module.exports = {
     },
     async getChat(ctx, next){
         await ctx.render("chat")
-    }
+    },
+    // async reg(ctx, next){
+    //     const {firstname, lastname, email, username} =ctx.request.body;
+    //     try{
+    //         const find= await User.find({email, username});
+    //         if (find.length!=0){
+    //             throw new Error("same person already exist");
+    //         }
+    //         else{
+    //             const newUser= new User({firstname, lastname, email, username});
+    //             await User.create(newUser);
+    //             ctx.redirect("signup/complete");
+    //         }
+    //     }
+    //     catch(err){
+    //         throw new Error("something's gone wrong")
+    //     }
+    // },
+  
 }
