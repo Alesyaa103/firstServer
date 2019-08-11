@@ -1,8 +1,8 @@
 const passport = require('koa-passport');
-const User = require('../models/User');
-const config= require('config');
+const config = require('config');
 
 const jwt = require('jwt-simple'); // аутентификация по JWT для hhtp
+const User = require('../models/User');
 
 module.exports = {
   async getList(ctx, next) {
@@ -60,7 +60,7 @@ module.exports = {
     }
   },
   async regpass(ctx, next) {
-    //const id = ctx.params.id
+    // const id = ctx.params.id
     const url = ctx.request.header.referer;
     const constid = url.substring(url.length - 24, url.length);
     const { password1, password2 } = ctx.request.body;
@@ -79,15 +79,14 @@ module.exports = {
   },
   async login(ctx, next) {
     await passport.authenticate('local', (err, user) => {
-      console.log(config.get("jwtSecret"));
       if (user) {
         const payload = {
           id: user._id,
         };
         ctx.body = {
-        token: jwt.encode(payload, config.get("jwtSecret")),
-        }
-        //ctx.redirect('personal');
+          token: jwt.encode(payload, config.get('jwtSecret')),
+        };
+        // ctx.redirect('personal');
       } else {
         ctx.body = {
           error: err,
@@ -95,7 +94,7 @@ module.exports = {
       }
     })(ctx, next);
   },
-  async getPersonal(ctx){
+  async getPersonal(ctx) {
     ctx.body = 'Secret content';
-  }
+  },
 };

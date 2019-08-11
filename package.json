@@ -14,7 +14,6 @@
   "license": "ISC",
   "dependencies": {
     "crypto": "^1.0.1",
-    "jsonwebtoken": "^8.5.1",
     "jwt-simple": "^0.5.6",
     "koa": "^2.7.0",
     "koa-bodyparser": "^4.2.1",
@@ -28,11 +27,9 @@
     "passport-jwt": "^4.0.0",
     "passport-local": "^1.0.0",
     "pug": "^2.0.4",
-    "socket.io": "^2.2.0",
-    "socketio-jwt": "^4.5.0"
+    "config": "^3.2.2"
   },
   "devDependencies": {
-    "config": "^3.2.2",
     "eslint": "^5.16.0",
     "eslint-config-airbnb-base": "^13.2.0",
     "eslint-plugin-import": "^2.18.2",

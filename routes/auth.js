@@ -1,5 +1,5 @@
 const koaRouter = require('koa-router');
-const passport =require('koa-passport');
+const passport = require('koa-passport');
 
 const {
   reg, login, regpass, getSignIn, getPassword1, getPassword2, getPassword3, getChat, getPersonal,
@@ -16,7 +16,7 @@ router.get('email/ready/reset', getPassword3);
 router.get('signup', getSignUp1);
 router.get('signup/complete/ready', getSignUp6);
 router.get('signup/complete/:id', getSignUp2);
-router.get('personal', passport.authenticate('jwt', {session:false}), getPersonal);
+router.get('personal', passport.authenticate('jwt', { session: false }), getPersonal);
 router.get('search', getSearch);
 router.get('chat', getChat);
 
