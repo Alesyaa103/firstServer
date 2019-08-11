@@ -269,6 +269,11 @@ input[type="checkbox"]:checked + label:before {
   justify-content: center;
   margin: 0 auto;
   width: 1000px; }
+  @media screen and (max-width: 700px){
+    .envelop{
+      background-size: cover;
+    }
+  }
   .envelop img {
     height: 170px;
     margin-bottom: 20px;
