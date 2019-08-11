@@ -1,1 +1,1 @@
-https://alesya-first-server.herokuapp.com/
+https://server-koa.herokuapp.com/
