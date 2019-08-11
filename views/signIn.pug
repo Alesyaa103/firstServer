@@ -7,10 +7,10 @@ block variables
 block content
     section.content
         .container
-            form.send(action="###" method="POST")
+            form.send(action="/log-in" method="POST")
                 legend.send__name Sing In
-                input(placeholder="E-mail" type="email")
-                input(type="password" placeholder="Password")
+                input(placeholder="E-mail" type="email" name="email")
+                input(type="password" placeholder="Password" name='password')
                 a.send__link(href="###") Forgot password?
                 div.send__button
                     button(type="submit") Sign in

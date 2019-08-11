@@ -18,7 +18,7 @@ function confirm() {
     progress.children[1].style.backgroundColor = '#38ECAC';
     progress.children[2].style.backgroundColor = '#38ECAC';
   }
-  if (myPassword == '') {
+  if (myPassword === '') {
     this.style.marginBottom = '15px';
     progress.classList.add('hidden');
   }

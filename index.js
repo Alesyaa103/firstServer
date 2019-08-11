@@ -1,37 +1,42 @@
 const koa = require('koa');
-const app = new koa();
-const views = require("koa-views");
-const koaRouter = require("koa-router");
-const router = new koaRouter();
-const path = require("path");
-const serve = require("koa-static");
+const views = require('koa-views');
+const path = require('path');
+const koaRouter = require('koa-router');
+const serve = require('koa-static');
 const logger = require('koa-logger');
-const mongoose=require("mongoose");
-var bodyParser = require('koa-bodyparser');
+const bodyParser = require('koa-bodyparser');
+const passport = require('./libs/passport/index');
+require('./libs/mongoose');
 
-mongoose.connect('mongodb+srv://first-server:alesya8098@cluster0-ga2qm.mongodb.net/test?retryWrites=true&w=majority', 
-{useNewUrlParser: true, useFindAndModify: false, useCreateIndex: true}, 
-(err) => {if (err) throw new Error("Connected with db is faild"); console.log("connected");}
-);
+passport.initialize();
 
-app.use(views(path.join(__dirname,"/views"),{
-    extension: "pug",
-    map: {pug: "pug"}
+const app = new koa();
+const router = new koaRouter();
+
+app.use(views(path.join(__dirname, '/views'), {
+  extension: 'pug',
+  map: { pug: 'pug' },
 }));
+
 app.use(logger());
 app.use(bodyParser());
+// app.use(async ctx => {
+//   // the parsed body will store in ctx.request.body
+//   // if nothing was parsed, body will be an empty object {}
+//   ctx.body = ctx.request.body;
+// });
+app.use(passport.initialize());
 
-const auth = require("./routes/auth").routes();
+const auth = require('./routes/auth').routes();
+
 app.use(serve(path.join(__dirname, '/public')));
-router.use("/", auth)
+router.use('/', auth);
 app.use(router.routes())
-    .use(router.allowedMethods())
+  .use(router.allowedMethods());
 
 
-
-
-const PORT=process.env.PORT || 8080;
-app.listen(PORT, error=>{
-    if (error) console.log("error")
-    else console.log(`server on port ${PORT}`)
-})
+const PORT = process.env.PORT || 8080;
+app.listen(PORT, (error) => {
+  if (error) console.log('error');
+  else console.log(`server on port ${PORT}`);
+});
